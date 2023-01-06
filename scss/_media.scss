@@ -1,0 +1,41 @@
+@media (max-width: 767px) {
+	.thumbnails {
+		display: none;
+	}
+	.full-image {
+		position: static;
+		height: fit-content;
+	}
+	.left-side {
+		max-width: 100%;
+		padding: 30px;
+
+		.logo-image img {
+			height: 100px;
+		}
+	}
+}
+
+@media (max-width: 545px) {
+	.left-side .logo-image img {
+		max-width: 150px;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	html {
+		font-size: 10px;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1999px) {
+	html {
+		font-size: 12px;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	html {
+		font-size: 14px;
+	}
+}

@@ -1,0 +1,191 @@
+html {
+  font-family: sans-serif;
+  font-weight: 600;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.43em;
+}
+
+section {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.slider {
+  position: relative;
+}
+
+.main-slider {
+  position: relative;
+}
+
+.slide {
+  position: relative;
+  display: none;
+}
+.slide.active {
+  display: block;
+  animation: fadeInFromNone 1.5s ease-out;
+}
+.slide.hide {
+  display: none;
+  animation: fadeOut 1.5s ease-out;
+}
+
+.full-image {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.full-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: top right;
+}
+
+.left-side {
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4.57rem;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  box-sizing: border-box;
+}
+.left-side .logo-image img {
+  height: 150px;
+  object-fit: contain;
+  max-width: 300px;
+}
+.left-side .description {
+  color: #ffffff;
+}
+.left-side .description p {
+  font-size: 2.29em;
+}
+.left-side .solutions {
+  color: #ffffff;
+  font-size: 1.43em;
+}
+.left-side .solutions ul {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  list-style: none;
+  color: #cc069a;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px;
+}
+.thumbnails img {
+  max-width: 200px;
+  object-fit: contain;
+  opacity: 0.4;
+  width: min(20%, 200px);
+}
+.thumbnails img.current {
+  opacity: 1;
+}
+
+.slider-buttons .slider-button {
+  display: inline-block;
+  padding: 3px;
+  width: 40px;
+  height: 40px;
+  background: url("../img/icons/arrow.svg") no-repeat center center #cc069a;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+}
+.slider-buttons .slider-button.button-next {
+  transform: rotate(-90deg) translate(50%, 0);
+  right: -25px;
+}
+.slider-buttons .slider-button.button-previous {
+  transform: rotate(90deg) translate(-50%, 0);
+  left: -25px;
+}
+.slider-buttons .slider-button.disable {
+  background-color: #f5f5f5;
+  background-image: url("../img/icons/arrow-disable.svg");
+  pointer-events: none;
+}
+
+@media (max-width: 767px) {
+  .thumbnails {
+    display: none;
+  }
+  .full-image {
+    position: static;
+    height: fit-content;
+  }
+  .left-side {
+    max-width: 100%;
+    padding: 30px;
+  }
+  .left-side .logo-image img {
+    height: 100px;
+  }
+}
+@media (max-width: 545px) {
+  .left-side .logo-image img {
+    max-width: 150px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 10px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1999px) {
+  html {
+    font-size: 12px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  html {
+    font-size: 14px;
+  }
+}
+@keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    display: block;
+    opacity: 1;
+  }
+  1% {
+    display: none;
+    opacity: 1;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
